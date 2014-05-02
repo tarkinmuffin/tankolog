@@ -1,0 +1,20 @@
+<polymer-element name="fuel-load-entry" attributes="value">
+	<template>
+		<div class="summary">
+			<span class="entryDate">{{value.entryDate}}</span>
+			<br/>
+			<span class="odo">{{value.distance}}</span>
+			<br/>
+			<span class="price">{{value.price}}</span>
+			<br/>
+			<span class="quantity">{{value.quantity}}</span>
+			<br/>
+			<span class="trip">{{value.trip}}</span>
+			<br/>
+			<span class="consumption">{{value.consumption}}</span>
+			<br/>
+			<span class="paid">{{value.paid}}</span>
+		</div>
+	</template>
+	<script type="application/dart" src="fuelLoadEntry.dart"></script>
+</polymer-element>

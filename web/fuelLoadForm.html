@@ -1,0 +1,46 @@
+<polymer-element name="fuel-load-form">
+	<template>
+		<div id="fuelLoadForm">
+			<div class="entry">
+				<label>Date</label>
+				<input type="date" value="{{fuelLoad.entryDate}}" />
+			</div>
+			<div class="entry">
+				<label>Trip (Distance)</label>
+				<input type="number" value="{{fuelLoad.trip}}" />
+			</div>
+			<div class="entry">
+				<label>Odometer (Distance total)</label>
+				<input type="number" value="{{fuelLoad.distance}}" />
+			</div>
+			<div class="entry">
+				<label>Price (per liter)</label>
+				<input type="number" value="{{fuelLoad.price}}" />
+			</div>
+			<div class="entry">
+				<label>Quantity (liters)</label>
+				<input type="number" value="{{fuelLoad.quantity}}" />
+			</div>
+			<div class="summary">
+				<span class="entryDate">{{fuelLoad.entryDate}}</span>
+				<br/>
+				<span class="odo">{{fuelLoad.distance}}</span>
+				<br/>
+				<span class="price">{{fuelLoad.price}}</span>
+				<br/>
+				<span class="quantity">{{fuelLoad.quantity}}</span>
+				<br/>
+				<span class="trip">{{fuelLoad.trip}}</span>
+				<br/>
+				<span class="consumption">{{fuelLoad.consumption}}</span>
+				<br/>
+				<span class="paid">{{fuelLoad.paid}}</span>
+			</div>
+			<div class="buttons">
+				<button on-click="{{save}}">Save</button>
+				<button on-click="{{cancel}}">Cancel</button>
+			</div>
+		</div>
+	</template>
+	<script type="application/dart" src="fuelLoadForm.dart"></script>
+</polymer-element>
