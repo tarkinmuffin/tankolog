@@ -1,19 +1,29 @@
-<polymer-element name="fuel-load-entry" attributes="value">
+<polymer-element name="fuel-load-entry">
+	<style>
+		#summary {
+			font-size: 0.85em;
+			border: 1px solid grey;
+			margin: 5px;
+			padding: 5px;
+		}
+		#entryDate #trip #odo {
+			display: table-row;
+			float: left;
+		}
+		#price #quantity #consumption #paid {
+			display: table-row;
+			float: right;
+		}
+	</style>
 	<template>
 		<div class="summary">
-			<span class="entryDate">{{value.entryDate}}</span>
-			<br/>
-			<span class="odo">{{value.distance}}</span>
-			<br/>
-			<span class="price">{{value.price}}</span>
-			<br/>
-			<span class="quantity">{{value.quantity}}</span>
-			<br/>
-			<span class="trip">{{value.trip}}</span>
-			<br/>
-			<span class="consumption">{{value.consumption}}</span>
-			<br/>
-			<span class="paid">{{value.paid}}</span>
+			<div class="entryDate">{{fuelLoad.enteredOn}}</div>
+			<div class="odo">{{fuelLoad.distance}}</div>
+			<div class="price">{{fuelLoad.price}}</div>
+			<div class="quantity">{{fuelLoad.quantity}}</div>
+			<div class="trip">{{fuelLoad.trip}}</div>
+			<div class="consumption">{{fuelLoad.consumption}}</div>
+			<div class="paid">{{fuelLoad.paid}}</div>
 		</div>
 	</template>
 	<script type="application/dart" src="fuelLoadEntry.dart"></script>

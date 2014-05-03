@@ -8,6 +8,7 @@ import 'fuelLoad.dart';
 class FuelLoadEntry extends PolymerElement {
 
 	@published
+	@observable
 	FuelLoad fuelLoad;
 
 	FuelLoadEntry.created(): super.created();

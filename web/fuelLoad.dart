@@ -6,10 +6,24 @@ class FuelLoad extends Observable {
 	@observable String distance;
 	@observable String price;
 	@observable String quantity;
-	@observable String entryDate = new DateTime.now().toString();
+	@observable String enteredOn = new DateTime.now().toString();
+	@observable String paid;
+	@observable String consumption;
 
-	String get paid => calculatePaid();
-	String get consumption => calculateConsumption();
+	FuelLoad() {
+		[#price, #quantity].forEach(
+                (x) => onPropertyChange(this, x, () {
+						String paidOld = paid;
+						paid = calculatePaid();
+						return notifyPropertyChange(#paid, paidOld, paid);
+					}));
+		[#price, #trip].forEach(
+				(x) => onPropertyChange(this, x, () {
+						String consumptionOld = consumption;
+						consumption = calculateConsumption();
+						return notifyPropertyChange(#consumption, consumptionOld, consumption);
+					}));
+	}
 
 	String calculatePaid() {
 		if (price == null || quantity == null || price.isEmpty || quantity.isEmpty) {
