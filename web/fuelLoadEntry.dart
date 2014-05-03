@@ -13,4 +13,5 @@ class FuelLoadEntry extends PolymerElement {
 
 	FuelLoadEntry.created(): super.created();
 
+	bool get applyAuthorStyles => true;
 }

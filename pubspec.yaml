@@ -4,7 +4,7 @@ author: Gábor Ginter
 description: A (yet private) mobile application to track expenses on my car
 homepage: https://github.com/tarkinmuffin/tankolog
 dependencies:
-  bootjack: any
+  bootstrap_for_pub: any
   firebase: any
   polymer: any
 transformers:

@@ -4,32 +4,17 @@
 
 <polymer-element name="fuel-load-form">
 	<template>
-		<div id="fuelLoadForm">
-			<div class="formField">
-				<label>Date</label>
-				<input type="date" value="{{fuelLoad.enteredOn}}" />
-			</div>
-			<div class="formField">
-				<label>Trip (Distance)</label>
-				<input type="number" value="{{fuelLoad.trip}}" />
-			</div>
-			<div class="formField">
-				<label>Odometer (Distance total)</label>
-				<input type="number" value="{{fuelLoad.distance}}" />
-			</div>
-			<div class="formField">
-				<label>Price (per liter)</label>
-				<input type="number" value="{{fuelLoad.price}}" />
-			</div>
-			<div class="formField">
-				<label>Quantity (liters)</label>
-				<input type="number" value="{{fuelLoad.quantity}}" />
-			</div>
-			<div class="buttons">
-				<button on-click="{{save}}">Save</button>
-				<button on-click="{{reset}}">Reset</button>
-			</div>
+		<div>
+			<input class="form-control" type="date" id="enteredOn" value="{{fuelLoad.enteredOn}}" placeholder="Date" />
+			<input class="form-control" id="trip" type="number" value="{{fuelLoad.trip}}" placeholder="Trip (Distance)" />
+			<input class="form-control" type="number" id="distance" value="{{fuelLoad.distance}}" placeholder="Odometer (Distance total)" />
+			<input class="form-control" type="number" id="price" value="{{fuelLoad.price}}" placeholder="Price (per liter)" />
+			<input class="form-control" type="number" id="quantity" value="{{fuelLoad.quantity}}" placeholder="Quantity (liters)" />
 		</div>
+		<p>
+			<button class="btn btn-success btn-block" on-click="{{save}}">Save</button>
+			<button class="btn btn-block" on-click="{{reset}}">Reset</button>
+		</p>
 		<div id="fuelLoadList">
 			<template repeat="{{item in entries}}">
 				<fuel-load-entry fuelLoad="{{item}}"></fuel-load-entry>

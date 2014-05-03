@@ -25,4 +25,6 @@ class FuelLoadForm extends PolymerElement with Observable {
 		fuelLoad = new FuelLoad();
 	}
 
+	bool get applyAuthorStyles => true;
+
 }

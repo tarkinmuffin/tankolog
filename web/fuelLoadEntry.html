@@ -1,29 +1,47 @@
+<!DOCTYPE html>
+
 <polymer-element name="fuel-load-entry">
-	<style>
-		#summary {
-			font-size: 0.85em;
-			border: 1px solid grey;
-			margin: 5px;
-			padding: 5px;
-		}
-		#entryDate #trip #odo {
-			display: table-row;
-			float: left;
-		}
-		#price #quantity #consumption #paid {
-			display: table-row;
-			float: right;
-		}
-	</style>
 	<template>
-		<div class="summary">
-			<div class="entryDate">{{fuelLoad.enteredOn}}</div>
-			<div class="odo">{{fuelLoad.distance}}</div>
-			<div class="price">{{fuelLoad.price}}</div>
-			<div class="quantity">{{fuelLoad.quantity}}</div>
-			<div class="trip">{{fuelLoad.trip}}</div>
-			<div class="consumption">{{fuelLoad.consumption}}</div>
-			<div class="paid">{{fuelLoad.paid}}</div>
+		<div class="fuelLoadEntry">
+			<table class="w100">
+				<tr>
+					<td class="w50">
+						<span>{{fuelLoad.enteredOn}}</span>
+					</td>
+					<td class="w50">
+						<span>{{fuelLoad.distance}}</span>
+						<span class="smallText">KM (total)</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span>{{fuelLoad.trip}}</span>
+						<span class="smallText">KM (trip)</span>
+					</td>
+					<td>
+						<span>{{fuelLoad.quantity}}</span>
+						<span class="smallText">L</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span>{{fuelLoad.consumption}}</span>
+						<span class="smallText">L / 100KM</span>
+					</td>
+					<td>
+						<span>{{fuelLoad.price}}</span>
+						<span class="smallText">HUF / L</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<span class="importantValue">{{fuelLoad.paid}}</span>
+						<span class="smallText">HUF</span>
+					</td>
+				</tr>
+			</table>
 		</div>
 	</template>
 	<script type="application/dart" src="fuelLoadEntry.dart"></script>
